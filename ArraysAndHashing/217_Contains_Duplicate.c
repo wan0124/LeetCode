@@ -37,8 +37,8 @@ bool containsDuplicate(int *nums, int numsSize)
 
     return false;
     */
-
-    // sort first
+    // O(nlogn) + O(n) = O(nlogn)
+    //  sort first
     mergeSort(nums, 5);
     // then compare
     for (int i = 0; i < numsSize - 1; i++)
@@ -111,6 +111,8 @@ void mergeForMergeSort(int *nums, int left, int index, int right)
 
     while (rightIndex < rightArraySize)
     {
-        nums[numsIndex++] = leftArray[rightIndex++];
+        nums[numsIndex++] = rightArray[rightIndex++];
     }
+    free(leftArray);
+    free(rightArray);
 }
