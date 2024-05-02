@@ -5,38 +5,34 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import wan.leetcode.datastructure.TreeNode;
+import wan.leetcode.tree.datastructure.TreeNode;
 
 public class Binary_Tree_Right_Side_View_199 {
 	public List<Integer> rightSideView(TreeNode root) {
+
 		List<Integer> result = new ArrayList<Integer>();
+
 		if (root == null) {
 			return result;
 		}
 
-		TreeNode node = root;
-
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		queue.add(node);
+		queue.add(root);
 
 		while (!queue.isEmpty()) {
-			int parentSize = queue.size();
-			int index = 0;
-			TreeNode rightNode = null;
-			while (index < parentSize) {
-				rightNode = queue.poll();
-				// put every child node into the queue
-				if (rightNode.left != null) {
-					queue.add(rightNode.left);
+			int currentLevelSize = queue.size();
+			for (int i = 0; i < currentLevelSize; i++) {
+				TreeNode currentNode = queue.poll();
+				if (i == currentLevelSize - 1) {
+					result.add(currentNode.val);
 				}
-				if (rightNode.right != null) {
-					queue.add(rightNode.right);
+				if (currentNode.left != null) {
+					queue.add(currentNode.left);
 				}
-				index++;
+				if (currentNode.right != null) {
+					queue.add(currentNode.right);
+				}
 			}
-			// at the end of the while loop, the rightNode must be the real rightNode
-			result.add(rightNode.val);
-
 		}
 
 		return result;
