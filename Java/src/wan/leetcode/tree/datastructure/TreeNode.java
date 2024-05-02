@@ -1,4 +1,4 @@
-package wan.leetcode.datastructure;
+package wan.leetcode.tree.datastructure;
 
 public class TreeNode {
 	public int val;

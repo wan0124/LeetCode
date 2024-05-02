@@ -1,6 +1,6 @@
 package wan.leetcode.tree;
 
-import wan.leetcode.datastructure.TreeNode;
+import wan.leetcode.tree.datastructure.TreeNode;
 
 public class Lowest_Common_Ancestor_of_a_Binary_Search_Tree_235 {
 	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

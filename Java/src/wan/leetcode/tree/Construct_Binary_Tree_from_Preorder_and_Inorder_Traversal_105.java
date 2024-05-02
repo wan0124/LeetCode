@@ -1,6 +1,6 @@
 package wan.leetcode.tree;
 
-import wan.leetcode.datastructure.TreeNode;
+import wan.leetcode.tree.datastructure.TreeNode;
 
 public class Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_105 {
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
